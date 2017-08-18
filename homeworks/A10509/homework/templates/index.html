@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>Uband-木子李V</title>
+    
+    <link rel="stylesheet" href="/static/lib/weui/style/weui.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body ontouchstart>
+    <!-- logo -->
+    <div class="top">
+        <img class="logo" src="/static/img/uband-logo.png" alt="">
+    </div>
+    <!-- end of logo-->
+    <div class="weui-panel__bd">
+
+    {% for member in data %}
+                <a href="{{member.num}}/details" class="weui-media-box weui-media-box_appmsg frame">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb circle-img" src="{{member.icon}}" alt="">
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title name">{{member.name}}</h4>
+                        <p class="weui-media-box__desc">{{member.desc}}</p>
+                        <p>
+                        {% for l in member.label %}
+                            <label class="personal_label">{{l}}</label> 
+                        {% endfor %}
+                        </p>
+                       
+                    <div class="daka">
+                        <p>{{member.num}}</p>
+                    </div>
+                    </div>
+                </a>
+        </div>
+    {% endfor %}
+    </div>      
+	</div>
+</html>
